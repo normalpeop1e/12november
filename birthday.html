@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <h1 id="greeting"></h1>
+
+        <p>
+            <span class="fade-in-text">Selamat ulang tahun putri tukang ngising</span>
+            <span class="fade-in-text">Semoga di usia baru ini, awakmu selalu diberi kesehatan, kebahagiaan, dan
+                kesuksesan yang terus meningkat.</span>
+            <span class="fade-in-text">aku berharap setiap tindakan sek dirimu ambil membawa kebahagiaan dan kebaikan
+                ora meng nggo awakmu dewe tapi juga untuk orang lain.</span>
+            <span class="fade-in-text">Semoga segala cita-citamu tercapai, dan semoga dalam setiap perjalananmu, selalu
+                ono semangat yang menyertai menghadapi segala tantangan.</span>
+            <span class="fade-in-text">Semoga dalam setiap keputusan sek dirimu buat, dirimu menemukan kedamaian, dan
+                semoga setiap pengalaman sek wes alami membawa hikmah.</span>
+            <span class="fade-in-text">aku harap tahun ini dan seterusnya nggawe awakmu luweh percaya diri, lebih kuat
+                untuk menghadapi hidup, dan lebih banyak belajar hal-hal baru yang bermanfaat.</span>
+            <span class="fade-in-text">Tetaplah dadi putri sek aku kenal,paling kurang kurangi wae sek ngentut sak nggon
+                nggon,karo ojo gampang ngisingan 🎉</span>
+        </p>
+
+        <p id="birthdayDate"></p>
+        <button id="giftButton">Klik di sini untuk mendapatkan kado mu</button>
+
+
+        <div class="audio-container">
+            <audio autoplay loop src="musik.mp3"></audio>
+        </div>
+
+        <script>
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get("name");
+            const date = urlParams.get("date");
+
+            document.getElementById("greeting").innerText = `Selamat Ulang Tahun, ${name.charAt(0).toUpperCase() + name.slice(1)}!`;
+            document.getElementById("birthdayDate").innerText = `Tanggal Ulang Tahun: ${date}`;
+
+            document.getElementById("giftButton").addEventListener("click", function () {
+                window.location.href = "kado.html";
+            });
+        </script>
+    </div>
+</body>
+
+</html>

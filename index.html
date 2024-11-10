@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan Selamat Ulang Tahun</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+
+    <div class="audio-container">
+        <audio autoplay loop src="musik1.mp3"></audio>
+    </div>
+
+    <div class="card">
+        <h1>Welcome put</h1>
+        <p>Masukkan nama lengkap mu dulu baru boleh lanjut!:</p>
+
+        <input type="text" id="nameInput" placeholder="Nama kamu...">
+        <button onclick="checkName()">Dapatkan Ucapan</button>
+
+        <p id="error" class="error hidden">Nama tidak valid.</p>
+    </div>
+
+
+    <img src="ballon.png" class="balloon" style="left: 10%; top: 20%;" alt="Balloon">
+    <img src="ballon.png" class="balloon" style="left: 60%; top: 70%;" alt="Balloon">
+    <img src="ballon.png" class="balloon" style="left: 80%; top: 10%;" alt="Balloon">
+
+    <div class="confetti">
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+    </div>
+
+
+    <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+
+    <div class="particles"></div>
+
+    <script>
+        function checkName() {
+            const name = document.getElementById("nameInput").value.trim().toLowerCase();
+            const error = document.getElementById("error");
+
+            if (name === "putri tresianda") {
+                window.location.href = `birthday.html?name=${encodeURIComponent(name)}&date=12-11-2024`;
+            } else {
+                error.classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+
+</html>
